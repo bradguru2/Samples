@@ -6,7 +6,7 @@ namespace Sorts
 	/// Quick sort secret is the Partition. The Partition works very will with nearly
 	/// sorted data.  It is an in-place sort.
 	/// 
-	/// Three indexes involved in the merge. 
+	/// Partition, then sort
 	/// </summary>
 	public class QuickSort
 	{
