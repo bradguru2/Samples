@@ -10,7 +10,7 @@ public class Program {
 	}
 	
 	public static void main(String[] args) {
-		Character[] buffer = {'a', 'z', 'e', 'c', 'd', 'g', 'f'};
+		Character[] buffer = {'a', 'z', 'e', 'c', 'd', 'g', 'f', '1', '2', 'Z', 'A', '#', '~'};
 		Character[] source = Arrays.copyOf(buffer, buffer.length);
 		
 		//Insertion Sort
@@ -44,6 +44,27 @@ public class Program {
 		System.out.println("Trying merge sort on:");
 		printBuffer(source);
 		MergeSort.sort(source, 0, source.length - 1);
+		System.out.println("After sorting:");
+		printBuffer(source);
+		System.out.println();
+		
+		//Bucket Sort
+		source = Arrays.copyOf(buffer, buffer.length);
+		System.out.println("Trying bucket sort on:");
+		printBuffer(source);
+		
+		BucketSort.sort(source, 3, (elem) -> 
+		{
+			if(elem < 'b') {
+				return 0;//bucket 1
+			}
+			else if(elem < 'g') {
+				return 1;//bucket 2
+			}
+			
+			return 2;//bucket 3
+		});
+		
 		System.out.println("After sorting:");
 		printBuffer(source);
 		System.out.println();
